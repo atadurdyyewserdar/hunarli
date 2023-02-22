@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+  front:
+    stdin_open: true
+  api:
+    stdin_open: true
+  

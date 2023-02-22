@@ -1,0 +1,224 @@
+/* PROFILEPAGE */
+.profilepage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profilepage__main {
+    flex: 1;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100%;
+  }
+  
+  .profile_main_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .upper-rectangle {
+    background-color: black;
+    height: 150px;
+  }
+  
+  .bottom-rectangle {
+    background-color: rgb(27, 27, 27);
+    min-height: 300px;
+    height: 100%;
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .profile__image-box {
+    padding-left: 30px;
+    display: flex;
+    border-radius: 50%;
+    gap: 20px;
+    margin-bottom: 50px;
+    width: 100%;
+  }
+  
+  .username {
+    color: rgb(133, 133, 133);
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .bottom-image-box {
+    text-align: center;
+    margin-top: -50px;
+  }
+  
+  .bottom-image-box img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 2px solid rgb(255, 255, 255);
+  }
+  
+  .skills-container {
+    width: 100%;
+    height: 25px;
+    padding-bottom: 10px;
+  }
+  
+  .skill-items {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .skill {
+    min-width: 30px;
+    width: fit-content;
+    background-color: white;
+    height: 17px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 12px;
+    text-align: center;
+  }
+  
+  .profile-details {
+    font-size: 12px;
+    color: white;
+  }
+  
+  .profile-details-box h4 {
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    padding: 0 0 20px 0px;
+    margin: -10px 0 0 0;
+    font-weight: 400;
+  }
+  
+  .profile-details-box {
+    margin-top: -80px;
+    text-align: start;
+  }
+  
+  .profile-socials {
+    margin-top: 5px;
+  }
+  
+  .profile-socials img {
+    padding-right: 6px;
+    width: 13px;
+    height: auto;
+  }
+  
+  .membership {
+    color: rgb(133, 133, 133);
+  }
+  
+  .posts-section {
+    max-width: 800px;
+    min-height: 400px;
+    background-color: rgb(255, 255, 255);
+  }
+   
+  .user-input {
+    width: 300px;
+    height: 26px;
+  }
+  
+  .user-details-container {
+    max-width: 800px;
+    min-height: 400px;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  /* POST */
+  
+  .posts-title {
+    background-color: rgb(27, 27, 27);
+    color: rgb(90, 90, 90);
+    font-size: 25px;
+    font-weight: 500;
+    padding-left: 35px;
+    padding-bottom: 10px;
+  }
+  
+  .posts-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .posts-list li {
+    border-bottom: 1px solid rgb(179, 179, 179);
+    border-left: 1px solid rgb(179, 179, 179);
+    border-right: 1px solid rgb(179, 179, 179);
+    padding: 35px;
+  }
+  
+  .post-item {
+    font-size: 20px;
+    color: rgb(0, 75, 173);
+  }
+  
+  .post-item a {
+    text-decoration: none;
+  }
+  
+  .hashtags {
+    font-size: 12px;
+    color: rgb(26, 26, 26);
+    margin-top: 10px;
+  }
+  
+  .hashtags span {
+    height: 10px;
+    margin-right: 3px;
+    padding-left: 7px;
+    padding-right: 7px;
+    background-color: rgb(86, 141, 151);
+    text-align: center;
+    border-radius: 3px;
+  }
+  
+  .postpage-width {
+    max-width: 2000px;
+    width: 100%;
+  }
+  
+  .post-author{
+    display: flex;
+  }
+  
+  .post-author div {
+    margin-top: 20px;
+    margin-left: 5px;
+  }
+  
+  .post-author img{
+    width: auto;
+    border-radius: 50%;
+    height: 60px;
+  }
+  
+  .post-author h5 {
+    color: rgb(41, 41, 41);
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .post-author h6 {
+    color: rgb(109, 109, 109);
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+  }

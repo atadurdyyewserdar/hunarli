@@ -1,0 +1,7 @@
+FROM node:18.14.1-alpine3.17
+WORKDIR /front
+COPY package.json .
+RUN yarn
+COPY . ./front
+EXPOSE 8085
+CMD ["yarn", "dev"]
