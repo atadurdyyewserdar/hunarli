@@ -44,7 +44,7 @@ export const getResume = (id) => {
       responseType: "arraybuffer",
     })
     .then((res) => {
-      const dataR = res.data;
+      const dataR = res.data; 
       const blob = new Blob([dataR], { type: "application/pdf;charset=utf-8" });
       const fileName = "Resume.pdf"
       saveAs(blob, fileName);
