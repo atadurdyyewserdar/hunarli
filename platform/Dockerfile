@@ -10,7 +10,7 @@ RUN chown -R gradle /home/gradle/src
     
 RUN gradle build || return 0
 COPY . .
-RUN gradle clean build
+RUN gradle clean build --no-build-cache --stacktrace
     
 # actual container
 FROM amazoncorretto:17
