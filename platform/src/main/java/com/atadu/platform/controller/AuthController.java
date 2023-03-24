@@ -50,13 +50,14 @@ public class AuthController {
         LOGGER.info("header added...");
         Cookie aCookie = new Cookie("access_token", accessToken);
 //        Cookie rCookie = new Cookie("refresh", refreshToken);
-        aCookie.setSecure(true);
+//        aCookie.setSecure(true);
 //        rCookie.setSecure(true);
         aCookie.setHttpOnly(true);
 //        rCookie.setHttpOnly(true);
         servletResponse.addCookie(aCookie);
 //        servletResponse.addCookie(rCookie);
         loginDetails.setPassword(null);
+        loginDetails.setProfilePictureUrl(appUser.getProfilePictureMeta().getUrl());
         return ResponseEntity.ok().body(loginDetails);
     }
 

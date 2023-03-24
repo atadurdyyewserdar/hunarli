@@ -1,0 +1,11 @@
+.ql-editor-custom *{
+  font-size: 15px;
+}
+
+.ql-editor-custom h1 > * {
+  font-size: 30px;
+}
+
+.ql-editor-custom h2 > *{
+  font-size: 24px;
+}

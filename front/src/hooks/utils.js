@@ -1,3 +1,3 @@
-export function getImageUrl(path, imageName) {
-  return new URL(`${path}/${imageName}`, import.meta.url).href;
+export const getImageUrl = (fullPath) => {
+  return new URL(fullPath, import.meta.url).href;
 }

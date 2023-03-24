@@ -20,6 +20,10 @@ dependencies {
 	implementation 'com.auth0:java-jwt:4.2.2'
 	implementation 'com.google.guava:guava:31.1-jre'
 	implementation 'org.apache.commons:commons-lang3:3.12.0'
+	implementation 'com.amazonaws:aws-java-sdk:1.12.425'
+	implementation 'com.amazonaws:aws-java-sdk-s3:1.12.425'
+	implementation 'org.modelmapper:modelmapper:3.1.1'
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

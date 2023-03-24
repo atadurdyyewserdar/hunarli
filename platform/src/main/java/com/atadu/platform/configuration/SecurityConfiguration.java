@@ -1,14 +1,17 @@
 package com.atadu.platform.configuration;
 
-
 import com.atadu.platform.constant.SecurityConstant;
 import com.atadu.platform.filters.JwtAccessDeniedHandler;
 import com.atadu.platform.filters.JwtAuthenticationEntryPoint;
 import com.atadu.platform.filters.JwtFilter;
 import com.google.common.collect.ImmutableList;
+
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -78,9 +81,9 @@ public class SecurityConfiguration {
         return http.build();
     }
 
-
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration)
+            throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
     }
 
@@ -95,10 +98,12 @@ public class SecurityConfiguration {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         final CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(ImmutableList.of("http://localhost:8082"));
+        configuration.setAllowedOrigins(ImmutableList.of("http://localhost:8085", "http://localhost:80", "http://localhost"));
         configuration.setAllowedMethods(ImmutableList.of("GET", "POST", "PUT", "DELETE"));
         configuration.setAllowCredentials(true);
-        configuration.setAllowedHeaders(ImmutableList.of("Cache-Control", "Content-Type"));
+        configuration.setAllowedHeaders(ImmutableList.of("Origin", "Access-Control-Allow-Origin", "Content-Type",
+                "Accept", "Authorization", "Origin, Accept", "X-Requested-With",
+                "Access-Control-Request-Method", "Access-Control-Request-Headers", "Cache-Control", "Content-Type"));
         configuration.setExposedHeaders(ImmutableList.of("Set-Cookie"));
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);

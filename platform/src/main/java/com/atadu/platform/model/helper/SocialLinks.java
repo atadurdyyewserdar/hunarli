@@ -8,8 +8,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SocialLinks {
-    private String firstName;
-    private String lastName;
     private String twitter;
     private String linkedin;
     private String telegram;

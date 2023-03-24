@@ -17,7 +17,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
-// import com.auth0.jwt.interfaces.DecodedJWT;
 
 import java.util.ArrayList;
 import java.util.Arrays;

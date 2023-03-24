@@ -1,25 +1,6 @@
-import React from 'react'
-import './footer.css'
+import React from "react";
 const Footer = () => {
-  return (
-    <footer className="footer">
-        <div className="footer__container">
-          <div className="details__container">
-            <div className="d-links">
-              <a href="">Biz barada</a>
-              <a href="">Biz bilen habarlas</a>
-            </div>
-            <div className="social-media__container">
-              <a href=""><span className="s-link-twitter"></span></a>
-              <a href=""><span className="s-link-telegram"></span></a>
-            </div>
-          </div>
-          <div className="copyright__container">
-            © Coder 2023 . Ahli hukuklar goralan
-          </div>
-        </div>
-      </footer>
-  )
-}
+  return <footer className="w-full h-[70px] bg-[#001131e0]"></footer>;
+};
 
-export default Footer
+export default Footer;

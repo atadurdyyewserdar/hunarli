@@ -15,8 +15,10 @@ public class SecurityConstant {
             "/login",
             "/signup",
             "/",
-            "/confirm/**"
+            "/confirm/**",
+            "/confirm",
+            "/user/reset-password/**"
     };
 
-    //public static final String[] PUBLIC_URLS = {"**"};
+    // public static final String[] PUBLIC_URLS = {"**"};
 }

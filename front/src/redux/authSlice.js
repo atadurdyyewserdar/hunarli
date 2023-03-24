@@ -3,10 +3,13 @@ import axios from "axios";
 
 export const login = createAsyncThunk(
   "auth/login",
-  async function ({ username, password, navigate }, { rejectWithValue }) {
+  async function (
+    { username, password, navigate, setError },
+    { rejectWithValue }
+  ) {
     try {
       const response = await axios.post(
-        `http://localhost:8080/login`,
+        `http://localhost:8081/login`,
         {
           username: username,
           password: password,
@@ -14,9 +17,11 @@ export const login = createAsyncThunk(
         { withCredentials: true }
       );
       navigate("/");
+      console.log("hello")
       return response.data;
     } catch (error) {
       console.log(error);
+      setError(error.response.data.message)
       return rejectWithValue(error.response.data.message);
     }
   }
@@ -25,11 +30,11 @@ export const login = createAsyncThunk(
 export const register = createAsyncThunk(
   "auth/register",
   async function (
-    { firstName, lastName, username, password, email, navigate },
+    { firstName, lastName, username, password, email, navigate, setError },
     { rejectWithValue }
   ) {
     try {
-      const response = await axios.post(`http://localhost:8080/signup`, {
+      const response = await axios.post(`http://localhost:8081/signup`, {
         firstName: firstName,
         lastName: lastName,
         username: username,
@@ -39,6 +44,7 @@ export const register = createAsyncThunk(
       navigate("/login");
       return response.data;
     } catch (error) {
+      setError(error.response.data.message)
       return rejectWithValue(error.response.data.message);
     }
   }
@@ -49,7 +55,7 @@ export const logout = createAsyncThunk(
   async function (_, { dispatch }) {
     const instance = axios.create({ withCredentials: true });
     await instance
-      .post("http://localhost:8080/logout", { withCredentials: true })
+      .post("http://localhost:8081/logout", { withCredentials: true })
       .catch((err) => {
         console.log(err.response.data.message);
       });
