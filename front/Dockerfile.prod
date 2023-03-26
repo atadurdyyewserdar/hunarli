@@ -6,6 +6,7 @@ COPY . .
 RUN yarn run build
 
 FROM nginx:stable-alpine
-EXPOSE 80
+EXPOSE 80 443
 COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY ./nginx/.htpasswd /etc/nginx/conf.d/.htpasswd
 COPY --from=build /front/dist /usr/share/nginx/html

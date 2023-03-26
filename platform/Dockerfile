@@ -10,7 +10,7 @@ RUN chown -R gradle /home/gradle/src
     
 RUN gradle build || return 0
 COPY . .
-RUN gradle clean build --no-build-cache --stacktrace
+RUN gradle clean build
     
 FROM amazoncorretto:17
 ENV ARTIFACT_NAME=platform-0.0.1-SNAPSHOT.jar

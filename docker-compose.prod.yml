@@ -9,17 +9,6 @@ services:
       - 443:443
     volumes:
       - ./front/nginx/:/etc/nginx/conf.d/:ro
-      - ./front/nginx/certbot/conf:/etc/letsencrypt/:ro
-      - ./front/nginx/certbot/www:/var/www/certbot/:ro
-    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; startup-front-1 -s reload; done & nginx -g \"daemon off;\"'"
-  
-  certbot:
-    image: certbot/certbot:latest
-    volumes:
-      - ./front/nginx/certbot/conf:/etc/letsencrypt/:rw
-      - ./front/nginx/certbot/www/:/var/www/certbot/:rw
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
-
   api:
     build:
       context: ./platform
