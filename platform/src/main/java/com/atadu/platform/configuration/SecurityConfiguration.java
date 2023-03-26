@@ -98,7 +98,7 @@ public class SecurityConfiguration {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         final CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(ImmutableList.of("http://localhost:8085", "http://localhost:80", "http://localhost"));
+        configuration.setAllowedOrigins(ImmutableList.of("http://localhost:8085", "http://localhost:80", "http://localhost", "https://stg.serdar.live", "http://localhost:443"));
         configuration.setAllowedMethods(ImmutableList.of("GET", "POST", "PUT", "DELETE"));
         configuration.setAllowCredentials(true);
         configuration.setAllowedHeaders(ImmutableList.of("Origin", "Access-Control-Allow-Origin", "Content-Type",
