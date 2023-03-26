@@ -9,6 +9,7 @@ services:
       - 443:443
     volumes:
       - ./front/nginx/:/etc/nginx/conf.d/:ro
+      - ./front/nginx/ssl/serdar.live/:/etc/ssl/serdar.live
   api:
     build:
       context: ./platform
