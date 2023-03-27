@@ -8,6 +8,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { useAddPost } from "../../hooks/mutationHooks";
+import { ArrowPathIcon } from "@heroicons/react/24/solid";
 
 const NewJobPost = () => {
   const { user } = useSelector((state) => state.auth);
@@ -179,11 +180,7 @@ const NewJobPost = () => {
               className={`p-1 pl-4 pr-4 bg-[#001131e0] text-white rounded-sm`}
             >
               {postMutation.isLoading ? (
-                <img
-                  className={`text-center h-4 pr-2 pl-2 animate-spin`}
-                  src={getImageUrl("../assets/icons/rotate.png")}
-                  alt=""
-                />
+                <ArrowPathIcon className={`text-center h-4 pr-2 pl-2`} />
               ) : (
                 <h1>Post</h1>
               )}

@@ -11,12 +11,10 @@ public class PlatformApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PlatformApplication.class, args);
-
 	}
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
-
 }

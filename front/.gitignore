@@ -22,13 +22,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-
-# docker-compose -f docker-compose.yml -f docker-compose.prod.yml  run --rm --name certbot \
-#     -v ./front/nginx/certbot/conf:/etc/letsencrypt \
-#     -v ./front/nginx/certbot/www:/var/www/certbot \
-#     certbot \
-#     certonly --webroot --agree-tos --renew-by-default \
-#     --preferred-challenges http-01 --server https://acme-v02.api.letsencrypt.org/directory \
-#     --text --email atadurdyyewserdar@gmail.com \
-#     -w /var/www/certbot -d serdar.live

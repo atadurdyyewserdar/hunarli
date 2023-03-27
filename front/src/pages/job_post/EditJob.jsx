@@ -9,6 +9,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import "react-quill/dist/quill.snow.css";
 import { useJobPost } from "../../hooks/queryHooks";
 import { useUpdatePostMutation } from "../../hooks/mutationHooks";
+import { ArrowPathIcon } from "@heroicons/react/24/solid";
 
 const EditJob = () => {
   const { id } = useParams();
@@ -113,10 +114,8 @@ const EditJob = () => {
             <h1 className="text-white font-semibold">Edit mode ✍️📃 </h1>
             {jobPostQuery.isLoading ||
               (jobPostQuery.isFetching && (
-                <img
+                <ArrowPathIcon
                   className="h-4 animate-spin"
-                  src={getImageUrl("../assets/icons/rotate.png")}
-                  alt=""
                 />
               ))}
           </div>
@@ -210,10 +209,8 @@ const EditJob = () => {
                   className={`p-1 pl-4 pr-4 bg-[#001131e0] text-white rounded-md`}
                 >
                   {updateMutation.isLoading ? (
-                    <img
+                    <ArrowPathIcon
                       className={`text-center h-4 pr-2 pl-2 animate-spin`}
-                      src={getImageUrl("../assets/icons/rotate.png")}
-                      alt=""
                     />
                   ) : (
                     <h1>Save ✅</h1>

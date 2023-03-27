@@ -16,6 +16,7 @@ import {
   useProfileImageUpdate,
   useUserUpdate,
 } from "../../hooks/mutationHooks";
+import { ArrowPathIcon } from "@heroicons/react/24/solid";
 
 const MyProfile = () => {
   // Variables
@@ -179,10 +180,8 @@ const MyProfile = () => {
               className={` box-border bg-[#001131e0] p-[7px] m-2 pl-7 pr-7 rounded-md float-right text-white`}
             >
               {profileImageMutation.isLoading ? (
-                <img
+                <ArrowPathIcon
                   className={`text-center h-4 pr-2 pl-2 animate-spin`}
-                  src={getImageUrl("../assets/icons/rotate.png")}
-                  alt=""
                 />
               ) : (
                 <h1>Save ✅</h1>

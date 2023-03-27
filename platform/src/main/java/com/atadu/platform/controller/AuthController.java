@@ -67,6 +67,10 @@ public class AuthController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    public void test23() {
+        LOGGER.info("Hello");
+    }
+
     @GetMapping("/test")
     @PreAuthorize("hasAnyAuthority('user:read')")
     public ResponseEntity<String> test() {

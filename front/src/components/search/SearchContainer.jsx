@@ -1,6 +1,11 @@
 import React, { useState } from "react";
-import { getImageUrl } from "../../hooks/utils";
-import { BriefcaseIcon, MapPinIcon } from "@heroicons/react/24/solid";
+import {} from "@heroicons/react/24/outline";
+import {
+  ArrowPathIcon,
+  BriefcaseIcon,
+  MapPinIcon,
+} from "@heroicons/react/24/solid";
+import "../../App.css";
 
 const SearchContainer = (props) => {
   const [title, setTitle] = useState(props.title || "");
@@ -50,11 +55,7 @@ const SearchContainer = (props) => {
         className="md:min-w-[330px] flex items-center justify-center sm:my-auto sm:mx-auto m-2 box-border rounded-sm h-12 bg-[#001131e0] text-white w-full md:flex-1"
       >
         {isLoading ? (
-          <img
-            className={`h-4 pr-2 pl-2 animate-spin`}
-            src={getImageUrl("../assets/icons/rotate.png")}
-            alt=""
-          />
+          <ArrowPathIcon className="h-5 w-5 text-white animate-spin" />
         ) : (
           <h1>Search</h1>
         )}

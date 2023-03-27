@@ -21,6 +21,7 @@ import {
 } from "@heroicons/react/24/solid";
 
 import "./job_post.css";
+import { ArrowPathIcon } from "@heroicons/react/24/outline";
 const SelectedJob = () => {
   const { id } = useParams();
   const { user } = useSelector((state) => state.auth);
@@ -149,10 +150,8 @@ const SelectedJob = () => {
                   onClick={onSendSubmit}
                 >
                   {resumeSenderMutation.isLoading ? (
-                    <img
+                    <ArrowPathIcon
                       className={`h-4 pr-2 pl-2 animate-spin`}
-                      src={getImageUrl("../assets/icons/rotate.png")}
-                      alt=""
                     />
                   ) : (
                     <h1>Send</h1>

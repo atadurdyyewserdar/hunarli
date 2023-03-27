@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { getImageUrl } from "../../hooks/utils";
+import { ArrowPathIcon } from "@heroicons/react/24/solid";
 
 const HomeSearchContainer = () => {
   const [title, setTitle] = useState("");
@@ -77,11 +78,7 @@ const HomeSearchContainer = () => {
           className="flex items-center justify-center rounded-lg md:m-3 m-3 h-12 bg-[#001131e0] text-white w-full flex-1 md:flex-1"
         >
           {rotate ? (
-            <img
-              className={`h-5 pr-2 pl-2 ${rotate && "animate-spin"}`}
-              src={getImageUrl("../assets/icons/rotate.png")}
-              alt=""
-            />
+            <ArrowPathIcon className="h-6 w-6 font-bold text-white animate-spin" />
           ) : (
             <>
               <img

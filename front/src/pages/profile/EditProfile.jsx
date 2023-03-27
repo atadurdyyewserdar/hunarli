@@ -1,3 +1,4 @@
+import { ArrowPathIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 import { getImageUrl } from "../../hooks/utils";
 
@@ -221,10 +222,8 @@ const EditProfile = ({ data, onSave, isLoading }) => {
             className={` bg-[#001121e0] flex items-center justify-center w-24 h-9 rounded-md text-white text-sm`}
           >
             {isLoading ? (
-              <img
+              <ArrowPathIcon
                 className={`text-center h-4 pr-2 pl-2 animate-spin`}
-                src={getImageUrl("../assets/icons/rotate.png")}
-                alt=""
               />
             ) : (
               <h1>Save</h1>
