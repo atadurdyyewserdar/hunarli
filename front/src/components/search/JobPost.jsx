@@ -64,7 +64,7 @@ const JobPost = ({ job }) => {
             </div>
           </div>
           <div className="flex gap-3">
-            {["Java", "Websites"].map((value, index) => (
+            {job?.tags?.map((value, index) => (
               <Tag key={index} value={value} />
             ))}
           </div>

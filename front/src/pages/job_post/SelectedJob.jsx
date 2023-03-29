@@ -21,6 +21,7 @@ import {
 
 import "./job_post.css";
 import { ArrowPathIcon } from "@heroicons/react/24/outline";
+import Tag from "../../components/search/Tag";
 const SelectedJob = () => {
   const { id } = useParams();
   const { user, isAuth } = useSelector((state) => state.auth);
@@ -76,7 +77,7 @@ const SelectedJob = () => {
         <Notification />
         <div className="flex-1">
           <div className="container w-full mt-11">
-            <div className="sm:m-auto m-3 sm:w-full w-auto bg-slate-200 rounded-sm pb-7 p-5">
+            <div className="sm:m-auto m-3 sm:w-full w-auto bg-slate-100 rounded-sm pb-7 p-5">
               {jobPostQuery.isSuccess ? (
                 <div className="w-full">
                   <div className="bg-[#001131e0]  rounded-sm">
@@ -112,6 +113,11 @@ const SelectedJob = () => {
                         </h1>
                       </li>
                     </ul>
+                    <div className="flex gap-3 mb-4">
+                      {jobPostQuery.data?.tags?.map((value, index) => (
+                        <Tag key={index} value={value} />
+                      ))}
+                    </div>
                     <div className="bg-[#001131e0] rounded-b-none rounded-sm p-1 pl-3">
                       <h1 className="text-lg font-semibold text-white">
                         Description

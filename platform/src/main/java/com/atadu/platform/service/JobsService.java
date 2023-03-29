@@ -39,6 +39,7 @@ public class JobsService {
     }
 
     public void updateJobPost(String id, JobPost jobPost) throws Exception {
+        System.out.println(jobPost.getTags());
         JobPost jobPostToUpdate = jobsRepo.findById(id).orElseThrow(() -> new Exception("Job not found"));
         jobPostToUpdate.setTitle(jobPost.getTitle());
         jobPostToUpdate.setDescription(jobPost.getDescription());
@@ -47,6 +48,7 @@ public class JobsService {
         jobPostToUpdate.setCompanyUrl(jobPost.getCompanyUrl());
         jobPostToUpdate.setResumesEmail(jobPost.getResumesEmail());
         jobPostToUpdate.setCategory(jobPost.getCategory());
+        jobPostToUpdate.setTags(jobPost.getTags());
         jobsRepo.save(jobPostToUpdate);
     }
 

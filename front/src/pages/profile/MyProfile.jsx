@@ -7,7 +7,7 @@ import Notification from "../../components/general/Notification";
 import { useEffect, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import { useResumeQuery, useUserQuery } from "../../hooks/queryHooks";
 import {
@@ -15,8 +15,23 @@ import {
   useProfileImageUpdate,
   useUserUpdate,
 } from "../../hooks/mutationHooks";
-import { ArrowPathIcon, UserCircleIcon } from "@heroicons/react/24/solid";
-import { FolderArrowDownIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowPathIcon,
+  BriefcaseIcon,
+  BuildingOffice2Icon,
+  DevicePhoneMobileIcon,
+  GlobeAltIcon,
+  MapPinIcon,
+  PlusIcon,
+  UserCircleIcon,
+} from "@heroicons/react/24/solid";
+import {
+  FolderArrowDownIcon,
+  PencilSquareIcon,
+  TrashIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
+import JobPost from "../../components/profile/JobPost";
 
 const MyProfile = () => {
   // Variables
@@ -135,7 +150,7 @@ const MyProfile = () => {
                 <XMarkIcon className="h-4" />
               </button>
               <div className="flex items-center flex-col">
-                <div className="border-4 border-[#001131e0] rounded-md p-2 m-5">
+                <div className="border-4 border-[#001131e0] rounded-sm p-2 m-5">
                   <AvatarEditor
                     className="bg-slate-900 mb-2"
                     image={profilePic}
@@ -157,7 +172,7 @@ const MyProfile = () => {
                   />
                 </div>
                 <label
-                  className="mb-10 box-border bg-[#001131e0] text-[15px] text-white rounded-md p-2 pt-2 pl-4 pr-4 cursor-pointer"
+                  className="mb-10 box-border bg-[#001131e0] text-[15px] text-white rounded-sm p-2 pt-2 pl-4 pr-4 cursor-pointer"
                   htmlFor="res"
                 >
                   Upload your image
@@ -173,7 +188,7 @@ const MyProfile = () => {
             </div>
             <button
               onClick={savePicture}
-              className={` box-border bg-[#001131e0] p-[7px] m-2 pl-7 pr-7 rounded-md float-right text-white`}
+              className={` box-border bg-[#001131e0] p-[7px] m-2 pl-7 pr-7 rounded-sm float-right text-white`}
             >
               {profileImageMutation.isLoading ? (
                 <ArrowPathIcon
@@ -188,7 +203,7 @@ const MyProfile = () => {
             {userQuery.isLoading
               ? null
               : userQuery.isSuccess && (
-                  <div className="bg-slate-100 rounded-md  sm:flex sm:gap-2 sm:pl-10 pt-20 p-5">
+                  <div className="bg-slate-100 rounded-sm  sm:flex sm:gap-2 sm:pl-10 pt-20 p-5">
                     <div className="flex-shrink-0 flex flex-col items-center sm:mr-5 mb-5">
                       {userQuery.data?.profilePictureMeta ? (
                         <img
@@ -206,22 +221,21 @@ const MyProfile = () => {
                       </h1>
                       <h1 className="font-semibold text-lg text-slate-700 pb-2 mb-2">
                         {userQuery.data?.occupation && (
-                          <>{userQuery.data?.occupation} 💼</>
+                          <>{userQuery.data?.occupation}</>
                         )}
                       </h1>
                       <button
                         onClick={() => setIsEditUserMode(!isEditUserMode)}
-                        className="bg-[#001121e0] mb-5 p-2 pl-3 pr-3 rounded-md text-white text-sm"
+                        className="bg-[#001121e0] mb-5 p-2 pl-3 pr-3 rounded-sm text-white text-sm"
                       >
-                        Edit profile ✍️
+                        Edit profile
                       </button>
                       <button
                         onClick={() => setOpenProfileDialog(!openProfileDialog)}
-                        className="bg-[#001121e0] p-2 pl-3 pr-3 rounded-md text-white text-sm"
+                        className="bg-[#001121e0] p-2 pl-3 pr-3 rounded-sm text-white text-sm"
                       >
-                        Edit picture 📸
+                        Edit picture
                       </button>
-                      {/* <button onClick={notify}>Click</button> */}
                     </div>
                     {isEditUserMode ? (
                       <EditProfile
@@ -239,32 +253,40 @@ const MyProfile = () => {
                           <li>
                             <h1 className="text-[15px] mb-1">
                               {userQuery.data?.location && (
-                                <>📌&nbsp;&nbsp;{userQuery.data?.location}</>
+                                <div className="flex">
+                                  <MapPinIcon className="h-5 w-5 text-[#383838]" />{" "}
+                                  &nbsp;&nbsp;{userQuery.data?.location}
+                                </div>
                               )}
                             </h1>
                           </li>
                           <li>
                             <h1 className="text-[15px] mb-1">
                               {userQuery.data?.currentCompany && (
-                                <>
-                                  🏢&nbsp;&nbsp;{userQuery.data?.currentCompany}
-                                </>
+                                <div className="flex">
+                                  <BuildingOffice2Icon className="h-5 w-5 text-[#383838]" />
+                                  &nbsp;&nbsp;{userQuery.data?.currentCompany}
+                                </div>
                               )}
                             </h1>
                           </li>
                           <li>
                             <h1 className="text-[15px] mb-1">
                               {userQuery.data?.portfolioUrl && (
-                                <>
-                                  🌐&nbsp;&nbsp;{userQuery.data?.portfolioUrl}
-                                </>
+                                <div className="flex">
+                                  <GlobeAltIcon className="h-5 w-5 text-[#383838]" />
+                                  &nbsp;&nbsp;{userQuery.data?.portfolioUrl}
+                                </div>
                               )}
                             </h1>
                           </li>
                           <li>
                             <h1 className="text-[15px] mb-1">
                               {userQuery.data?.phoneNumber && (
-                                <>📞&nbsp;&nbsp;{userQuery.data?.phoneNumber}</>
+                                <div className="flex">
+                                  <DevicePhoneMobileIcon className="h-5 w-5 text-[#383838]" />
+                                  &nbsp;&nbsp;{userQuery.data?.phoneNumber}
+                                </div>
                               )}
                             </h1>
                           </li>
@@ -273,11 +295,11 @@ const MyProfile = () => {
                         {userQuery.data?.resumeId && (
                           <div className="flex items-center mb-1">
                             <h1 className="text-[15px] mr-2">
-                              📋&nbsp;&nbsp;Resume
+                              &nbsp;&nbsp;Resume
                             </h1>
                             <button
                               onClick={downloadHandler}
-                              className="flex justify-center items-center bg-[#001131e0] text-[15px] text-white rounded-md p-1 pl-4 pr-4"
+                              className="flex justify-center items-center bg-[#001131e0] text-[15px] text-white rounded-sm p-1 pl-4 pr-4"
                             >
                               Yukle
                               <FolderArrowDownIcon className="h-5 ml-2" />
@@ -305,44 +327,34 @@ const MyProfile = () => {
                           <h1 className="font-semibold text-md mb-2">
                             About me
                           </h1>
-                          <div className="w-full border-slate-400 border p-3 rounded-md shadow-sm">
+                          <div className="w-full border-slate-400 border p-3 rounded-sm shadow-sm">
                             <p className="text-sm">{userQuery.data?.aboutMe}</p>
                           </div>
                         </div>
                         <div className="mt-5 w-full">
-                          <h1 className="font-semibold text-md mb-2">
-                            Job posts
-                          </h1>
+                          <div className="flex justify-between items-center mb-2">
+                            <h1 className="font-semibold text-md">
+                              Job posts
+                            </h1>
+                            <Link
+                              to="/newjob"
+                              className="rounded-[50%] p-2 w-fit hover:bg-slate-300"
+                              state={{ from: "/myprofile" }}
+                            >
+                              {deleteMutation.isLoading ? (
+                                <ArrowPathIcon className="h-5 w-5 animate-spin" />
+                              ) : (
+                                <PlusIcon className=" h-5 w-5" />
+                              )}
+                            </Link>
+                          </div>
                           <ul className="">
                             {userQuery.data?.jobPosts?.map((job, index) => (
-                              <li
+                              <JobPost
                                 key={index}
-                                className="text-sm border-slate-400 border rounded-md shadow-sm mb-2"
-                              >
-                                <div className="text-white text-sm bg-[#001131e0] flex gap-3 rounded-t-md p-2 pl-2 items-center">
-                                  <button
-                                    onClick={() => deleteHandler(job.id)}
-                                    className="p-1 bg-white rounded-md"
-                                  >
-                                    🗑️
-                                  </button>
-                                  <Link
-                                    to={`/editjob/${job.id}`}
-                                    className="p-1 bg-white rounded-md"
-                                  >
-                                    ✍️
-                                  </Link>
-                                </div>
-                                <Link
-                                  to={`/jobs/${job.id}`}
-                                  className="flex sm:flex-row flex-col gap-2 p-3 flex-wrap w-full "
-                                >
-                                  <h1>💼&nbsp;{job.title}</h1>
-                                  <h1>📌&nbsp;{job.location}</h1>
-                                  <h1>🏢&nbsp;{job.companyName}</h1>
-                                  <h1>📅&nbsp;{job.postedDate}</h1>
-                                </Link>
-                              </li>
+                                job={job}
+                                deleteHandler={deleteHandler}
+                              />
                             ))}
                           </ul>
                         </div>

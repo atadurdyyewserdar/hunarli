@@ -1,6 +1,7 @@
 package com.atadu.platform.model;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 import com.atadu.platform.model.views.JSONViews;
 import com.fasterxml.jackson.annotation.*;
@@ -31,4 +32,5 @@ public class JobPost {
     private LocalDateTime postedDate;
     private String resumesEmail;
     private String category;
+    private Set<String> tags;
 }

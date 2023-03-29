@@ -5,9 +5,10 @@ import Header from "../../components/header/Header";
 import "react-quill/dist/quill.snow.css";
 import { useQueryClient } from "@tanstack/react-query";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { useAddPost } from "../../hooks/mutationHooks";
-import { ArrowPathIcon } from "@heroicons/react/24/solid";
+import { ArrowPathIcon, XCircleIcon } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
 
 const NewJobPost = () => {
   const { user } = useSelector((state) => state.auth);
@@ -17,6 +18,28 @@ const NewJobPost = () => {
     queryClient.invalidateQueries(["jobs"]);
     navigate("/myprofile");
   });
+  
+  const [tags, setTags] = useState([]);
+  const [newtag, setNewtag] = useState("");
+  
+  const addItem = (tag) => {
+    const tg = tag.trim().toUpperCase();
+    if (tg.length === 0 || tags.includes(tg)) {
+      setNewtag("");
+      return;
+    }
+    const arr = [tg, ...tags];
+    setTags(arr);
+    setNewtag("");
+  };
+
+  const removeItem = (index) => {
+    const arr = [...tags];
+    arr.splice(index, 1);
+    setTags(arr);
+  };
+
+  const loc = useLocation();
 
   const [title, setTitle] = useState("");
   const [location, setLocation] = useState("");
@@ -46,6 +69,7 @@ const NewJobPost = () => {
       companyUrl: companyUrl,
       resumesEmail: resumesEmail,
       category: category,
+      tags: tags,
     };
     postMutation.mutate({ jobPost, username: user.username });
   };
@@ -164,6 +188,40 @@ const NewJobPost = () => {
                   (CV's will be send to this email and job poster)
                 </label>
               </li>
+              <li>
+                <div className="mt-3">
+                  <h1 className="font-semibold text-md mb-2">Tags</h1>
+                  <div className="flex gap-3">
+                    <input
+                      className="text-sm w-full outline-none border border-slate-700 p-1 pl-2 rounded-sm mb-2"
+                      type="text"
+                      placeholder="Tag name"
+                      value={newtag}
+                      onChange={(e) => onChangeHandler(e, setNewtag)}
+                    />
+                    <button
+                      onClick={() => addItem(newtag)}
+                      className="border-[#001131e0] hover:bg-[#001131e0] hover:text-white hover:border-white rounded-sm p-1 pl-4 pr-4 text-sm text-black border-2 mb-2"
+                    >
+                      Gosh
+                    </button>
+                  </div>
+                  <div>
+                    <ul className="flex gap-3 flex-wrap  border border-slate-400 p-3 rounded-sm shadow-sm">
+                      {tags.map((value, index) => (
+                        <li
+                          key={index}
+                          className="flex items-center cursor-pointer bg-[#cc6606f8] p-1 pl-2 pr-2 w-fit text-[12px] rounded-sm text-white"
+                          onClick={() => removeItem(index)}
+                        >
+                          {value}&nbsp;&nbsp;
+                          <XCircleIcon className="h-4 w-4 text-white" />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </li>
             </ul>
           </div>
           <div className="p-3 bg-[#001131e0]">
@@ -179,9 +237,12 @@ const NewJobPost = () => {
           />
 
           <div className="flex gap-3 float-right mt-5">
-            <button className="p-1 pl-4 pr-4 bg-[#001131e0] text-white rounded-sm">
+            <Link
+              to={loc.state === null ? "/myprofile" : loc.state.from}
+              className="p-1 pl-4 pr-4 bg-[#001131e0] text-white rounded-sm"
+            >
               Cancel
-            </button>
+            </Link>
             <button
               onClick={submitHandler}
               className={`p-1 pl-4 pr-4 bg-[#001131e0] text-white rounded-sm`}
