@@ -75,8 +75,9 @@ export const resetPassword = ({ token, passwordDetails }) => {
 
 export const verifyEmail = (token, username) => {
   return axios
-    .get(
-      `https://stg.hunarli.com/api/verify-email/confirm?token=${token}&username=${username}`
-    )
+    .get(`https://stg.hunarli.com/api/verify-email/confirm`, {
+      params: token,
+      username,
+    })
     .then((res) => res.data);
 };

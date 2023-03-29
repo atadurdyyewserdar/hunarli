@@ -2,6 +2,6 @@ FROM amazoncorretto:17
 ENV ARTIFACT_NAME=platform-0.0.1-SNAPSHOT.jar
 ENV APP_HOME=/usr/api
 WORKDIR $APP_HOME
-COPY /home/ec2-user/build/libs/$ARTIFACT_NAME .
+COPY ./build/libs/$ARTIFACT_NAME .
 ENTRYPOINT exec java -jar $ARTIFACT_NAME
 EXPOSE 8081
