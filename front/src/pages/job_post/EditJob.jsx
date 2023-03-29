@@ -2,7 +2,6 @@ import ReactQuill from "react-quill";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import { useEffect, useState } from "react";
-import { getImageUrl } from "../../hooks/utils";
 import { useNavigate, useParams } from "react-router";
 import { useSelector } from "react-redux";
 import { useQueryClient } from "@tanstack/react-query";

@@ -22,7 +22,7 @@ export const useResumeQuery = (resumeId) => {
   });
 };
 
-export const useResetPasswordValidationQuery = () => {
+export const useResetPasswordValidationQuery = (token) => {
   return useQuery({
     queryKey: ["reset-password"],
     queryFn: () => validateResetPasswordToken(token),

@@ -22,7 +22,7 @@ import com.atadu.platform.service.JobsService;
 import jakarta.mail.MessagingException;
 
 @RestController
-@RequestMapping(path = "/jobs")
+@RequestMapping(path = "/api/jobs")
 public class JobPostsController {
     private final Logger LOGGER = LoggerFactory.getLogger(getClass());
     private JobsService jobsService;

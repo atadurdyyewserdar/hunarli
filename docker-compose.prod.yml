@@ -8,10 +8,8 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ./front/nginx:/etc/nginx/conf.d/:ro
-      - ./front/nginx/ssl:/etc/nginx/ssl/serdar.live
+      - ./front/nginx:/etc/nginx/conf.d
+      - /home/ec2-user/ssl/hunarli.com:/etc/nginx/ssl/hunarli.com
   api:
     build:
       context: ./platform
-    ports:
-      - 8081:8081

@@ -5,13 +5,10 @@ import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import com.atadu.platform.dto.AppUserDto;
 import com.atadu.platform.repo.AppUserRepo;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.atadu.platform.dto.JobPostDto;
 import com.atadu.platform.dto.ResumeDto;
 import com.atadu.platform.exception.UserNotFoundException;
 import com.atadu.platform.model.AppUser;

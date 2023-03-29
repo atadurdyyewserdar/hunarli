@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -65,11 +66,13 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests()
                 .requestMatchers(SecurityConstant.PUBLIC_URLS)
                 .permitAll()
+                .requestMatchers(HttpMethod.GET, "/api/jobs", "/api/jobs/search", "/api/jobs/*")
+                .permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
                 .logout()
-                .deleteCookies("access_token", "refresh")
+                .deleteCookies("access_token")
                 .logoutSuccessHandler(new HttpStatusReturningLogoutSuccessHandler(HttpStatus.OK))
                 .clearAuthentication(true)
                 .and()
@@ -99,7 +102,7 @@ public class SecurityConfiguration {
     public CorsConfigurationSource corsConfigurationSource() {
         final CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(List.of("*"));
-        configuration.setAllowedOrigins(ImmutableList.of("http://localhost:8085", "http://localhost:80", "http://localhost", "https://stg.serdar.live", "http://localhost:443"));
+        configuration.setAllowedOrigins(ImmutableList.of("http://localhost:8085", "http://localhost:80", "http://localhost", "https://stg.hunarli.com", "http://localhost:443"));
         configuration.setAllowedMethods(ImmutableList.of("GET", "POST", "PUT", "DELETE"));
         configuration.setAllowCredentials(true);
         configuration.setAllowedHeaders(ImmutableList.of("Origin", "Access-Control-Allow-Origin", "Content-Type",

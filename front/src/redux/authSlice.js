@@ -9,7 +9,7 @@ export const login = createAsyncThunk(
   ) {
     try {
       const response = await axios.post(
-        `http://localhost:8081/login`,
+        `https://stg.hunarli.com/api/login`,
         {
           username: username,
           password: password,
@@ -17,11 +17,9 @@ export const login = createAsyncThunk(
         { withCredentials: true }
       );
       navigate("/");
-      console.log("hello")
       return response.data;
     } catch (error) {
-      console.log(error);
-      setError(error.response.data.message)
+      setError(error.response.data.message);
       return rejectWithValue(error.response.data.message);
     }
   }
@@ -34,7 +32,7 @@ export const register = createAsyncThunk(
     { rejectWithValue }
   ) {
     try {
-      const response = await axios.post(`http://localhost:8081/signup`, {
+      const response = await axios.post(`https://stg.hunarli.com/api/signup`, {
         firstName: firstName,
         lastName: lastName,
         username: username,
@@ -44,7 +42,7 @@ export const register = createAsyncThunk(
       navigate("/login");
       return response.data;
     } catch (error) {
-      setError(error.response.data.message)
+      setError(error.response.data.message);
       return rejectWithValue(error.response.data.message);
     }
   }
@@ -55,9 +53,8 @@ export const logout = createAsyncThunk(
   async function (_, { dispatch }) {
     const instance = axios.create({ withCredentials: true });
     await instance
-      .post("http://localhost:8081/logout", { withCredentials: true })
+      .post("https://stg.hunarli.com/api/logout", { withCredentials: true })
       .catch((err) => {
-        console.log(err.response.data.message);
       });
     dispatch(signOut());
   }

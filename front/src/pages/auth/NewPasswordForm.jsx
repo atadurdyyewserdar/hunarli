@@ -12,7 +12,7 @@ export const NewPasswordForm = () => {
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const resetPasswordValidationQuery = useResetPasswordValidationQuery();
+  const resetPasswordValidationQuery = useResetPasswordValidationQuery(token);
   const resetPasswordMutation = useResetPasswordMutation(() =>
     navigate("/login")
   );

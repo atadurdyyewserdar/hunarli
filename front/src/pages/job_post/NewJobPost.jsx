@@ -3,7 +3,6 @@ import ReactQuill from "react-quill";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import "react-quill/dist/quill.snow.css";
-import { getImageUrl } from "../../hooks/utils";
 import { useQueryClient } from "@tanstack/react-query";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";

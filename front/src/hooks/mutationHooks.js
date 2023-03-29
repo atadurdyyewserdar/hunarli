@@ -1,6 +1,11 @@
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-hot-toast";
-import { addJobPost, deleteJob, sendResume, updateJobPost } from "../api/jobPost";
+import {
+  addJobPost,
+  deleteJob,
+  sendResume,
+  updateJobPost,
+} from "../api/jobPost";
 import {
   resetPassword,
   saveProfileImage,
@@ -58,6 +63,13 @@ export const useAddPost = (onSuccessRequest) => {
 };
 
 export const useResumeSenderMutation = (onSuccessRequest) => {
+  return useMutation({
+    mutationFn: sendResume,
+    onSuccess: onSuccessRequest,
+  });
+};
+
+export const useEmailVerificationMutation = (onSuccessRequest) => {
   return useMutation({
     mutationFn: sendResume,
     onSuccess: onSuccessRequest,

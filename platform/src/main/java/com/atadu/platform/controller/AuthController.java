@@ -22,7 +22,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path = "/")
+@RequestMapping(path = "/api")
 public class AuthController {
     private AppUserService appUserService;
     private JwtProvider jwtProvider;
@@ -83,7 +83,7 @@ public class AuthController {
         return ResponseEntity.ok("Success");
     }
 
-    @GetMapping("/confirm")
+    @GetMapping("/verify-email/confirm")
     public ResponseEntity<String> confirmEmail(@RequestParam String token, @RequestParam String username) throws EmailTokenExpiredException, UserNotFoundException, InvalidConfirmationToken {
         return ResponseEntity.ok().body(appUserService.confirmToken(token, username));
     }

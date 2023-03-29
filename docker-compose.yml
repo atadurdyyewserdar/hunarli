@@ -4,4 +4,6 @@ services:
     stdin_open: true
   api:
     stdin_open: true
+    ports:
+      - 8081:8081
   

@@ -51,8 +51,6 @@ public class EmailService {
         helper.setText(emailContent, true);
         helper.setTo(to);
         helper.setSubject("New applicant");
-        // File file2 = new File(file.getOriginalFilename());
-        // file.transferTo(file2);
         helper.addAttachment(file.getOriginalFilename(), file);
         mailSender.send(message);
     }

@@ -16,7 +16,6 @@ import com.atadu.platform.repo.ResumesRepo;
 import com.atadu.platform.util.CredentialsValidator;
 import jakarta.mail.MessagingException;
 import org.apache.commons.lang3.StringUtils;
-import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,8 +79,8 @@ public class AppUserService implements UserDetailsService {
         PasswordResetToken resetToken = new PasswordResetToken(token, appUser.getId(), LocalDateTime.now(),
                 LocalDateTime.now().plusMinutes(30));
         String emailContent = "Please use below link to reset your password\n\n"
-                + "http://localhost:8085/reset-password/new/" + token
-                + "\n\nYou have 24 hours to confirm your email";
+                + "https://stg.hunarli.com/reset-password/new/" + token
+                + "\n\nThis link is valid only for 30 minutes";
         emailService.send(appUser.getEmail(), emailContent);
         passwordsRepo.save(resetToken);
     }
@@ -314,13 +313,12 @@ public class AppUserService implements UserDetailsService {
         appUser.setEnabled(false);
         appUser.setJoinDate(LocalDateTime.now());
         appUser.setJobPosts(new HashSet<>());
-        appUser.setLocation("Ashgabat, Turkmenistan");
         String token = UUID.randomUUID().toString();
         EmailConfirmationToken confirmationToken = new EmailConfirmationToken(token, LocalDateTime.now(),
                 LocalDateTime.now().plusHours(24));
         appUser.setConfirmationTokens(confirmationToken);
         String emailContent = "Please use below link to confirm you email\n\n"
-                + "http://localhost:8081/confirm?username="
+                + "https://stg.hunarli.com/verify-email/confirm?username="
                 + appUser.getUsername()
                 + "&token=" + token
                 + "\n\nYou have 24 hours to confirm your email";

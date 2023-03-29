@@ -11,6 +11,7 @@ import EditJob from "./pages/job_post/EditJob";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import { NewPasswordForm } from "./pages/auth/NewPasswordForm";
 import MyProfile from "./pages/profile/MyProfile";
+import EmailVerification from "./pages/auth/EmailVerification";
 
 function App() {
   return (
@@ -22,6 +23,11 @@ function App() {
         <Route exact path="/login" element={<LoginPage />} />
         <Route exact path="/signup" element={<RegistrationPage />} />
         <Route exact path="/reset-password" element={<ForgotPassword />} />
+        <Route
+          exact
+          path="/verify-email/confirm"
+          element={<EmailVerification />}
+        />
         <Route
           exact
           path="/reset-password/new/:token"

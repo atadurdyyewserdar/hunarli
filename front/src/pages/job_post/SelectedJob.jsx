@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import ReactQuill from "react-quill";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import Footer from "../../components/footer/Footer";
 import Notification from "../../components/general/Notification";
 import Header from "../../components/header/Header";
@@ -24,8 +24,9 @@ import "./job_post.css";
 import { ArrowPathIcon } from "@heroicons/react/24/outline";
 const SelectedJob = () => {
   const { id } = useParams();
-  const { user } = useSelector((state) => state.auth);
+  const { user, isAuth } = useSelector((state) => state.auth);
   const jobPostQuery = useJobPost(id);
+  const navigate = useNavigate();
   const [description, setDescription] = useState(
     jobPostQuery.data?.description || ""
   );
@@ -55,6 +56,14 @@ const SelectedJob = () => {
     formData.append("username", user.username);
     formData.append("resumesEmail", jobPostQuery.data.resumesEmail);
     resumeSenderMutation.mutate({ id, formData });
+  };
+
+  const applyHandler = () => {
+    if (!isAuth) {
+      navigate("/login");
+      return;
+    }
+    setOpen(!open);
   };
 
   useEffect(() => {
@@ -123,7 +132,7 @@ const SelectedJob = () => {
             </div>
             <div className="w-full p-3">
               <button
-                onClick={() => setOpen(!open)}
+                onClick={applyHandler}
                 className="sm:mt-4 mb-10 sm:w-32 w-full h-10 rounded-sm float-right text-white bg-[#001131e0]"
               >
                 Apply
@@ -150,9 +159,7 @@ const SelectedJob = () => {
                   onClick={onSendSubmit}
                 >
                   {resumeSenderMutation.isLoading ? (
-                    <ArrowPathIcon
-                      className={`h-4 pr-2 pl-2 animate-spin`}
-                    />
+                    <ArrowPathIcon className={`h-4 pr-2 pl-2 animate-spin`} />
                   ) : (
                     <h1>Send</h1>
                   )}

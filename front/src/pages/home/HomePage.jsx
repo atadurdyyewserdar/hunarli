@@ -2,8 +2,6 @@ import React from "react";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import HomeSearchContainer from "../../components/home/HomeSearchContainer";
-import { getImageUrl } from "../../hooks/utils";
-import PopularSearch from "../../components/search/PopularSearch";
 
 const HomePage = () => {
   return (
