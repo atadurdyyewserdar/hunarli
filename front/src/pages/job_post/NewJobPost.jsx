@@ -103,12 +103,20 @@ const NewJobPost = () => {
               </li>
               <li>
                 <h1 className="text-sm mb-1">Yerleshyan yeri*</h1>
-                <input
-                  className="min-h-[35px] text-sm w-full outline-none border border-slate-700 p-1 pl-2 rounded-sm"
-                  type="text"
+                <select
                   value={location}
-                  onChange={(e) => onChangeHandler(e, setLocation)}
-                />
+                  onChange={(e) => setLocation(e.target.value)}
+                  className="min-h-[35px] text-sm pr-10 outline-none border border-slate-700 p-1 pl-2 rounded-sm"
+                >
+                  <option value="all">All</option>
+                  <option value="Ashgabat">Ashgabat</option>
+                  <option value="Mary">Mary</option>
+                  <option value="Anew">Anew</option>
+                  <option value="Turkmenbashy">Turkmenbashy</option>
+                  <option value="Dashoguz">Dashoguz</option>
+                  <option value="Nebitdag">Nebitdag</option>
+                  <option value="Turkmenabat">Turkmenabat</option>
+                </select>
               </li>
               <li>
                 <h1 className="text-sm mb-1">Kompaniyan ady*</h1>

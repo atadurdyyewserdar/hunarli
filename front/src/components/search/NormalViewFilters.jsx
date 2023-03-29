@@ -45,7 +45,7 @@ const NormalViewFilters = ({
             <h1 className="font-semibold text-[17px]">Categories</h1>
           </div>
           <div className="pb-3">
-            <ul className="p-3 pt-1 pb-2 rounded-b-sm bg-[#bbc2ff] ">
+            <ul className="p-3 pt-1 pb-2 rounded-b-sm">
               {categoryFilters.map((c, index) => (
                 <CheckBox
                   key={index}
@@ -64,7 +64,7 @@ const NormalViewFilters = ({
           <div className="p-3 pb-2 pt-2 border-b bg-[#001131e0]">
             <h1 className="font-semibold text-[17px] ">Date posted</h1>
           </div>
-          <div className="pb-3 pt-3 bg-[#bbc2ff] rounded-b-sm">
+          <div className="pb-3 pt-3  rounded-b-sm">
             <div>
               <ul className="p-3 pt-0 rounded-b-md ">
                 {dateFilters.map((c, index) => (

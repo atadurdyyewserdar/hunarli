@@ -15,16 +15,16 @@ const MobileViewFilters = ({
 }) => {
   return (
     <div className="sm:hidden fixed z-[99] pt-11 bottom-0 h-full w-full bg-[#001131]">
-      <div className="rounded-md p-3 w-full h-fit ">
+      <div className="rounded-md p-3 w-full h-fit">
         <div className="mb-1">
-          <div className="flex items-center gap-3 p-3 pb-2 rounded-md">
+          {/* <div className="flex items-center gap-3 p-3 pb-2 rounded-md">
             <img
               className="h-6"
               src={getImageUrl("../assets/icons/sort.png")}
               alt=""
             />
             <h1 className="text-white">Sort</h1>
-          </div>
+          </div> */}
           <div>
             <div>
               <ul className="p-3 pt-0 ml-8 rounded-b-md ">

@@ -1,11 +1,12 @@
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
-import { getImageUrl } from "../../hooks/utils";
 import { logout } from "../../redux/authSlice";
 import LargeScreenNavbar from "./LargeScreenNavbar";
 import SmallScreenNavbar from "./SmallScreenNavbar";
+import './header.css'
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -23,21 +24,17 @@ const Header = () => {
       <header className="flex mx-auto w-full justify-center max-w-screen-xl ">
         <div className="w-full flex justify-between items-center bg-[#ffff] p-3">
           <h1 className="font-extrabold text-[30px]">
-            <Link>VACANCY</Link>
+            <Link className="logo" to="/">Hunarli.com</Link>
           </h1>
           {open ? (
-            <img
+            <XMarkIcon
               className="md:hidden h-5 z-[99] cursor-pointer"
-              src={getImageUrl("../assets/icons/close.png")}
-              alt=""
               onClick={() => setOpen(!open)}
             />
           ) : null}
           {!open ? (
-            <img
-              className="md:hidden h-5 z-[99] cursor-pointer"
-              src={getImageUrl("../assets/icons/menu.png")}
-              alt=""
+            <Bars3Icon
+              className="md:hidden h-7 z-[99] cursor-pointer"
               onClick={() => setOpen(!open)}
             />
           ) : null}

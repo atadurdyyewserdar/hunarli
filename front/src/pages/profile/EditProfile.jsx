@@ -1,6 +1,5 @@
 import { ArrowPathIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
-import { getImageUrl } from "../../hooks/utils";
 
 const EditProfile = ({ data, onSave, isLoading }) => {
   const [firstName, setFirstname] = useState(data.firstName || "");

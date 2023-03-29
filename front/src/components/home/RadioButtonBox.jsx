@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { getImageUrl } from "../../hooks/utils";
+import React from "react";
 import "./homecomponents.css";
 
 const RadioButtonBox = ({
@@ -23,17 +22,8 @@ const RadioButtonBox = ({
         onChange={(e) => onChangeB(e)}
       />
       <label className="ml-2 text-black" htmlFor="date">
-        {item.title}&nbsp;
+        {item.title}
       </label>
-      {item.icon && (
-          <>
-            <img
-              className="h-5"
-              src={getImageUrl(item.icon)}
-              alt=""
-            />
-          </>
-        )}
     </li>
   );
 };

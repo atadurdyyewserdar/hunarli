@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import {} from "@heroicons/react/24/outline";
 import {
   ArrowPathIcon,
   BriefcaseIcon,
   MapPinIcon,
-} from "@heroicons/react/24/solid";
+} from "@heroicons/react/24/outline";
 import "../../App.css";
 
 const SearchContainer = (props) => {
@@ -23,21 +22,22 @@ const SearchContainer = (props) => {
 
   return (
     <div className="flex flex-wrap gap-3 mt-11">
-      <div className=" bg-[#f0f0f0] md:min-w-[330px] flex items-center rounded-sm sm:my-auto sm:mx-auto m-2 box-border h-12 border border-gray-400 w-full md:flex-1">
+      <div className=" bg-[#001131e0] md:min-w-[330px] flex items-center rounded-sm sm:my-auto sm:mx-auto m-2 box-border h-12 border border-[#001131e0] w-full md:flex-1">
+        <BriefcaseIcon className="text-white h-6 pr-3 pl-3" />
         <input
           type="text"
-          className="rounded-lg bg-[#f0f0f0] pl-5 h-full w-full focus:outline-none"
+          className="rounded-sm pl-5 h-full w-full focus:outline-none"
           placeholder="Hunar ady..."
           value={title}
           onChange={(e) => onChangeHandler(e, setTitle)}
         />
-        <BriefcaseIcon className="h-6 pr-2 pl-2" />
       </div>
-      <div className="md:min-w-[330px] bg-[#f0f0f0] flex items-center h-12 rounded-sm sm:my-auto sm:mx-auto m-2 border border-gray-400 box-border w-full md:flex-1">
+      <div className="md:min-w-[330px] bg-[#001131e0] flex items-center h-12 rounded-sm sm:my-auto sm:mx-auto m-2 border border-[#001131e0] box-border w-full md:flex-1">
+        <MapPinIcon className="text-white h-6 pr-3 pl-3" />
         <select
           value={location}
           onChange={(e) => setLocation(e.target.value)}
-          className="rounded-lg bg-[#f0f0f0] text-[18px] pl-5 h-full w-full focus:outline-none"
+          className="rounded-sm pl-5 h-full w-full focus:outline-none"
         >
           <option value="all">All</option>
           <option value="Ashgabat">Ashgabat</option>
@@ -48,7 +48,6 @@ const SearchContainer = (props) => {
           <option value="Nebitdag">Nebitdag</option>
           <option value="Turkmenabat">Turkmenabat</option>
         </select>
-        <MapPinIcon className="h-6 pr-2 pl-2" />
       </div>
       <button
         onClick={onClickHandler}

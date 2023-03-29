@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import { getImageUrl } from "../../hooks/utils";
-import { ArrowPathIcon, MapPinIcon } from "@heroicons/react/24/solid";
-import { BriefcaseIcon } from "@heroicons/react/24/solid";
+import { BriefcaseIcon, ArrowPathIcon, MapPinIcon } from "@heroicons/react/24/outline";
 
 const HomeSearchContainer = () => {
   const [title, setTitle] = useState("");
@@ -39,7 +37,8 @@ const HomeSearchContainer = () => {
         </p>
       </div>
       <div className="flex flex-wrap max-w-3xl">
-        <div className="bg-[#f0f0f0] flex items-center rounded-lg md:ml-0 m-3 box-border h-12 border border-gray-400 w-full md:flex-1">
+        <div className="bg-[#001131e0] flex items-center rounded-sm md:ml-0 m-3 box-border h-12 border border-[#001131] w-full md:flex-1">
+          <BriefcaseIcon className="text-white h-8 pr-2 pl-2" />
           <input
             type="text"
             className="rounded-l-lg pl-5 h-full w-full focus:outline-none"
@@ -47,9 +46,9 @@ const HomeSearchContainer = () => {
             value={title}
             onChange={onChangeHandler}
           />
-          <BriefcaseIcon className="h-10 pr-2 pl-2 text-[#001131]"/>
         </div>
-        <div className="flex items-center md:m-3 m-3 h-12 border-[1px] rounded-lg border-gray-400 box-border w-full md:flex-1">
+        <div className="bg-[#001131e0] flex items-center md:m-3 m-3 h-12 border-[1px] rounded-sm border-[#001131] box-border w-full md:flex-1">
+          <MapPinIcon className="text-white h-8 pr-2 pl-2" />
           <select
             value={location}
             onChange={(e) => setLocation(e.target.value)}
@@ -64,15 +63,10 @@ const HomeSearchContainer = () => {
             <option value="Nebitdag">Nebitdag</option>
             <option value="Turkmenabat">Turkmenabat</option>
           </select>
-          <MapPinIcon
-            className="h-10 pr-2 pl-2 text-[#001131]"
-            src={getImageUrl("../assets/icons/job-location.png")}
-            alt=""
-          />
         </div>
         <button
           onClick={onClickHandler}
-          className="flex items-center justify-center rounded-lg md:m-3 m-3 h-12 bg-[#001131e0] text-white w-full flex-1 md:flex-1"
+          className="flex items-center justify-center rounded-sm md:m-3 m-3 h-12 bg-[#001131e0] text-white w-full flex-1 md:flex-1"
         >
           {rotate ? (
             <ArrowPathIcon className="h-6 w-6 font-bold text-white animate-spin" />

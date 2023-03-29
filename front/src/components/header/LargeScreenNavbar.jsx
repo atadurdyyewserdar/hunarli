@@ -37,7 +37,7 @@ const LargeScreenNavbar = ({ isAuth, logout, imgUrl }) => {
         <li className="p-1 mx-3">
           <Link
             to="/signup"
-            className="font-semibold no-underline hover:bg-[#001131] px-5 py-2 bg-[#001131e0] text-white rounded-lg"
+            className="font-semibold no-underline hover:bg-[#001131] px-5 py-2 bg-[#001131e0] text-white rounded-sm"
           >
             Sign Up
           </Link>

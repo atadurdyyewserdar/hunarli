@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getImageUrl } from "../../hooks/utils";
 import { toast } from "react-hot-toast";
 import { useResumeQuery, useUserQuery } from "../../hooks/queryHooks";
 import {
@@ -17,6 +16,7 @@ import {
   useUserUpdate,
 } from "../../hooks/mutationHooks";
 import { ArrowPathIcon, UserCircleIcon } from "@heroicons/react/24/solid";
+import { FolderArrowDownIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const MyProfile = () => {
   // Variables
@@ -132,11 +132,7 @@ const MyProfile = () => {
                 className="float-right"
                 onClick={() => setOpenProfileDialog(!openProfileDialog)}
               >
-                <img
-                  className="h-4"
-                  src={getImageUrl("../assets/icons/close.png")}
-                  alt=""
-                />
+                <XMarkIcon className="h-4" />
               </button>
               <div className="flex items-center flex-col">
                 <div className="border-4 border-[#001131e0] rounded-md p-2 m-5">
@@ -284,13 +280,7 @@ const MyProfile = () => {
                               className="flex justify-center items-center bg-[#001131e0] text-[15px] text-white rounded-md p-1 pl-4 pr-4"
                             >
                               Yukle
-                              <img
-                                className="h-5 ml-2"
-                                src={getImageUrl(
-                                  "../assets/icons/download.png"
-                                )}
-                                alt=""
-                              />
+                              <FolderArrowDownIcon className="h-5 ml-2" />
                             </button>
                           </div>
                         )}

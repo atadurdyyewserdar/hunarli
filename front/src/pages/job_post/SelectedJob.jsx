@@ -10,7 +10,6 @@ import Header from "../../components/header/Header";
 import Modal from "../../components/modal/Modal";
 import { useResumeSenderMutation } from "../../hooks/mutationHooks";
 import { useJobPost } from "../../hooks/queryHooks";
-import { getImageUrl } from "../../hooks/utils";
 import {
   CalendarDaysIcon,
   ClockIcon,

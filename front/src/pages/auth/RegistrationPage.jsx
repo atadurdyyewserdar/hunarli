@@ -4,8 +4,9 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
-import { getImageUrl } from "../../hooks/utils";
 import { register, resetError } from "../../redux/authSlice";
+import { EnvelopeIcon, InformationCircleIcon, UserIcon, LockClosedIcon } from "@heroicons/react/24/outline";
+// import { EnvelopeIcon } from "@heroicons/react/24/solid";
 
 const RegistrationPage = () => {
   const { isAuth } = useAuth();
@@ -53,80 +54,55 @@ const RegistrationPage = () => {
       <div className="w-full flex flex-col flex-wrap max-w-sm items-center">
         <h1 className="font-bold text-[40px] mb-6">VACANCY</h1>
         {error && <NotificationBar error={error} />}
-        <div className="bg-[#f0f0f0] flex items-center  rounded-lg m-3 box-border h-12 border border-gray-400 w-full">
-          <img
-            className="h-6 pr-1 pl-4"
-            src={getImageUrl("../assets/icons/information.png")}
-            alt=""
-          />
+        <div className="bg-[#001131e0] flex items-center  rounded-sm m-3 box-border h-12 border border-[#001131e0] w-full">
+          <InformationCircleIcon className="text-white h-6 pr-3 pl-3" />
           <input
             type="text"
-            className="rounded-lg bg-[#f0f0f0] pl-5 h-full w-full focus:outline-none"
+            className="rounded-sm pl-5 h-full w-full focus:outline-none"
             placeholder="Name"
             onChange={(e) => onChangeInput(e, setFirstName)}
           />
         </div>
-        <div className="bg-[#f0f0f0] flex items-center  rounded-lg m-3 box-border h-12 border border-gray-400 w-full">
-          <img
-            className="h-6 pr-1 pl-4"
-            src={getImageUrl("../assets/icons/information.png")}
-            alt=""
-          />
+        <div className="bg-[#001131e0] flex items-center  rounded-sm m-3 box-border h-12 border border-[#001131e0] w-full">
+          <InformationCircleIcon className="text-white h-6 pr-3 pl-3" />
           <input
             type="text"
-            className="rounded-lg bg-[#f0f0f0] pl-5 h-full w-full focus:outline-none"
+            className="rounded-sm pl-5 h-full w-full focus:outline-none"
             placeholder="Last name"
             onChange={(e) => onChangeInput(e, setLastName)}
           />
         </div>
-        <div className="bg-[#f0f0f0] flex items-center  rounded-lg m-3 box-border h-12 border border-gray-400 w-full">
-          <img
-            className="h-6 pr-1 pl-4"
-            src={getImageUrl("../assets/icons/user.png")}
-            alt=""
-          />
+        <div className="bg-[#001131e0] flex items-center  rounded-sm m-3 box-border h-12 border border-[#001131e0] w-full">
+          <UserIcon className="text-white h-6 pr-3 pl-3" />
           <input
             type="login"
-            className="rounded-lg bg-[#f0f0f0] pl-5 h-full w-full focus:outline-none"
+            className="rounded-sm pl-5 h-full w-full focus:outline-none"
             placeholder="Login"
             onChange={(e) => onChangeInput(e, setUsername)}
           />
         </div>
-        <div className="bg-[#f0f0f0] flex items-center  rounded-lg m-3 box-border h-12 border border-gray-400 w-full">
-          <img
-            className="h-6 pr-1 pl-4"
-            src={getImageUrl("../assets/icons/email.png")}
-            alt=""
-          />
+        <div className="bg-[#001131e0] flex items-center  rounded-sm m-3 box-border h-12 border border-[#001131e0] w-full">
+          <EnvelopeIcon className="text-white h-6 pr-3 pl-3"/>
           <input
             type="text"
-            className="rounded-lg bg-[#f0f0f0] pl-5 h-full w-full focus:outline-none"
+            className="rounded-sm pl-5 h-full w-full focus:outline-none"
             placeholder="Email"
             onChange={(e) => onChangeInput(e, setEmail)}
           />
         </div>
-        <div className="bg-[#f0f0f0] flex items-center rounded-lg m-3 box-border h-12 border border-gray-400 w-full">
-          <img
-            className="h-6 pr-1 pl-4"
-            src={getImageUrl("../assets/icons/lock.png")}
-            alt=""
-          />
+        <div className="bg-[#001131e0] flex items-center rounded-sm m-3 box-border h-12 border border-[#001131e0] w-full">
+          <LockClosedIcon className="text-white h-6 pr-3 pl-3"/>
           <input
             type="password"
-            className="rounded-lg bg-[#f0f0f0] pl-5 h-full w-full focus:outline-none"
+            className="rounded-sm  pl-5 h-full w-full focus:outline-none"
             placeholder="Password"
             onChange={(e) => onChangeInput(e, setPassword)}
           />
         </div>
         <button
           onClick={registerUser}
-          className="flex items-center justify-center rounded-lg md:m-3 m-3 h-12 bg-[#001131e0] text-white w-full"
+          className="rounded-sm md:m-3 m-3 h-12 bg-[#001131e0] text-white w-full"
         >
-          <img
-            className="h-6 pr-3 pl-2"
-            src={getImageUrl("../assets/icons/naughty.png")}
-            alt=""
-          />
           Register
         </button>
         <div className="w-full">

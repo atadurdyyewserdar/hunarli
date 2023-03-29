@@ -4,7 +4,7 @@ import { useMutation } from "@tanstack/react-query";
 import { useNavigate } from "react-router";
 import { sendResetLink } from "../../api/users";
 import { useAuth } from "../../hooks/useAuth";
-import { getImageUrl } from "../../hooks/utils";
+import { EnvelopeIcon } from "@heroicons/react/24/solid";
 
 const ForgotPassword = () => {
   const { isAuth } = useAuth();
@@ -35,28 +35,19 @@ const ForgotPassword = () => {
     <div className="w-full flex justify-center mt-20 pr-6">
       <div className="w-full flex flex-col flex-wrap max-w-sm items-center">
         <h1 className="font-bold text-[40px] mb-6">VACANCY</h1>
-        <div className="bg-[#f0f0f0] flex items-center  rounded-lg m-3 box-border h-12 border border-gray-400 w-full">
-          <img
-            className="h-6 pr-1 pl-4"
-            src={getImageUrl("../assets/icons/user.png")}
-            alt=""
-          />
+        <div className="bg-[#001131e0] flex items-center  rounded-sm m-3 box-border h-12 border border-[#001131e0] w-full">
+          <EnvelopeIcon className="text-white h-6 pr-3 pl-3"/>
           <input
-            type="login"
-            className="rounded-lg bg-[#f0f0f0] pl-5 h-full w-full focus:outline-none"
+            type="email"
+            className="rounded-sm pl-5 h-full w-full focus:outline-none"
             placeholder="Type your email"
             onChange={onChangeHandler}
           />
         </div>
         <button
           onClick={onSubmitHandler}
-          className="flex items-center justify-center rounded-lg md:m-3 m-3 h-12 bg-[#001131e0] text-white w-full"
+          className="rounded-sm md:m-3 m-3 h-12 bg-[#001131e0] text-white w-full"
         >
-          <img
-            className="h-6 pr-3 pl-2"
-            src={getImageUrl("../assets/icons/naughty.png")}
-            alt=""
-          />
           Reset
         </button>
         <Modal

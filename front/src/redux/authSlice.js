@@ -9,7 +9,7 @@ export const login = createAsyncThunk(
   ) {
     try {
       const response = await axios.post(
-        `https://stg.hunarli.com/api/login`,
+        `http://localhost:8081/api/login`,
         {
           username: username,
           password: password,
