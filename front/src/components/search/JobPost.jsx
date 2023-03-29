@@ -9,6 +9,7 @@ import {
   UserIcon,
 } from "@heroicons/react/24/solid";
 import Tag from "./Tag";
+import { UserCircleIcon } from "@heroicons/react/24/solid";
 
 const JobPost = ({ job }) => {
   const date = format(new Date(job?.postedDate || null), "MMM d, yyyy 'y.'");
@@ -16,11 +17,15 @@ const JobPost = ({ job }) => {
   return (
     <li className="bg-slate-50 h-full sm:w-full m-3 mt-0 sm:min-h-[130px] border-[#979797] border rounded-sm shadow">
       <div className="flex h-1/2 p-3">
-        <img
-          className="rounded-[50%] h-20 p-1 mr-2"
-          src={job.author?.profilePictureMeta?.url}
-          alt=""
-        />
+        {job.author?.profilePictureMeta ? (
+          <img
+            className="rounded-[50%] h-20 p-1 mr-2"
+            src={job.author?.profilePictureMeta?.url}
+            alt=""
+          />
+        ) : (
+          <UserCircleIcon className="rounded-[50%] text-[#001131] h-20 p-1 mr-2" />
+        )}
         <div>
           <Link
             to={`/jobs/${job?.id}`}

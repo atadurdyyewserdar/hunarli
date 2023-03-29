@@ -16,7 +16,7 @@ import {
   useProfileImageUpdate,
   useUserUpdate,
 } from "../../hooks/mutationHooks";
-import { ArrowPathIcon } from "@heroicons/react/24/solid";
+import { ArrowPathIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 
 const MyProfile = () => {
   // Variables
@@ -194,11 +194,15 @@ const MyProfile = () => {
               : userQuery.isSuccess && (
                   <div className="bg-slate-100 rounded-md  sm:flex sm:gap-2 sm:pl-10 pt-20 p-5">
                     <div className="flex-shrink-0 flex flex-col items-center sm:mr-5 mb-5">
-                      <img
-                        className="h-[200px] w-[200px] rounded-[50%] border-[#001131e0] border-[2px] mb-3"
-                        src={userQuery.data?.profilePictureMeta?.url}
-                        alt=""
-                      />
+                      {userQuery.data?.profilePictureMeta ? (
+                        <img
+                          className="h-[200px] w-[200px] rounded-[50%] border-[#001131e0] border-[2px] mb-3"
+                          src={userQuery.data?.profilePictureMeta?.url}
+                          alt=""
+                        />
+                      ) : (
+                        <UserCircleIcon className="h-[200px] w-[200px] rounded-[50%] border-[#001131e0] border-[2px] mb-3" />
+                      )}
                       <h1 className="font-semibold text-lg text-slate-700 mb-2">
                         {userQuery.data?.username && (
                           <>@{userQuery.data?.username}</>

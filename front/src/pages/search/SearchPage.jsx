@@ -18,9 +18,8 @@ const dateFilters = [
   },
   {
     id: 2,
-    title: "Last 24 hours",
+    title: "Last 24 hours 🔥",
     value: "last24",
-    icon: "https://em-content.zobj.net/source/skype/289/fire_1f525.png",
   },
 
   {

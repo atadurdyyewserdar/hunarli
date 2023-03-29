@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
+import { UserCircleIcon } from "@heroicons/react/24/solid";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -55,11 +56,15 @@ const LargeScreenNavbar = ({ isAuth, logout, imgUrl }) => {
           <Menu as="div" className="relative inline-block text-left">
             <div>
               <Menu.Button className="rounded-[50%] inline-flex w-full justify-center gap-x-1.5 bg-white p-1 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-                <img
-                  className="h-8 rounded-[50%]"
-                  src={imgUrl ? imgUrl : null}
-                  alt=""
-                />
+                {imgUrl ? (
+                  <img
+                    className="h-8 rounded-[50%]"
+                    src={imgUrl ? imgUrl : null}
+                    alt=""
+                  />
+                ) : (
+                  <UserCircleIcon className="h-8 text-[#001131e0]" />
+                )}
               </Menu.Button>
             </div>
 

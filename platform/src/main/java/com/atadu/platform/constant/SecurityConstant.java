@@ -15,8 +15,7 @@ public class SecurityConstant {
             "/api/login",
             "/api/signup",
             "/api",
-            "/api/confirm/**",
-            "/api/confirm",
+            "/api/verify-email/**",
             "/api/user/reset-password/**"
     };
 

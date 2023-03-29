@@ -57,7 +57,9 @@ public class AuthController {
         servletResponse.addCookie(aCookie);
 //        servletResponse.addCookie(rCookie);
         loginDetails.setPassword(null);
-        loginDetails.setProfilePictureUrl(appUser.getProfilePictureMeta().getUrl());
+        if (appUser.getProfilePictureMeta() != null) {
+            loginDetails.setProfilePictureUrl(appUser.getProfilePictureMeta().getUrl());
+        }
         return ResponseEntity.ok().body(loginDetails);
     }
 
@@ -85,6 +87,7 @@ public class AuthController {
 
     @GetMapping("/verify-email/confirm")
     public ResponseEntity<String> confirmEmail(@RequestParam String token, @RequestParam String username) throws EmailTokenExpiredException, UserNotFoundException, InvalidConfirmationToken {
+        LOGGER.info("Validating email...");
         return ResponseEntity.ok().body(appUserService.confirmToken(token, username));
     }
 
