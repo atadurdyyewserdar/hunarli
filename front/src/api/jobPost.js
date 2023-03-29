@@ -6,33 +6,33 @@ const axiosWithCredentials = axios.create({
 
 export const addJobPost = ({ jobPost, username }) => {
   return axiosWithCredentials.post(
-    `http://localhost:8081/api/jobs/new/${username}`,
+    `https://stg.hunarli.com/api/jobs/new/${username}`,
     jobPost
   );
 };
 
 export const updateJobPost = ({ id, jobPost }) => {
   return axiosWithCredentials.put(
-    `http://localhost:8081/api/jobs/${id}`,
+    `https://stg.hunarli.com/api/jobs/${id}`,
     jobPost
   );
 };
 
 export const deleteJob = ({ id, username }) => {
   return axiosWithCredentials.delete(
-    `http://localhost:8081/api/jobs/${id}/${username}`
+    `https://stg.hunarli.com/api/jobs/${id}/${username}`
   );
 };
 
 export const getJobPosts = (filters, isSearch) => {
   if (isSearch) {
     return axios
-      .get(`http://localhost:8081/api/jobs/search`, { params: filters })
+      .get(`https://stg.hunarli.com/api/jobs/search`, { params: filters })
       .then((response) => {
         return response.data;
       });
   } else {
-    return axios.get(`http://localhost:8081/api/jobs`).then((response) => {
+    return axios.get(`https://stg.hunarli.com/api/jobs`).then((response) => {
       return response.data;
     });
   }
@@ -40,7 +40,7 @@ export const getJobPosts = (filters, isSearch) => {
 
 export const getPostById = (id) => {
   return axios
-    .get(`http://localhost:8081/api/jobs/${id}`)
+    .get(`https://stg.hunarli.com/api/jobs/${id}`)
     .then((response) => {
       return response.data;
     });
@@ -48,7 +48,7 @@ export const getPostById = (id) => {
 
 export const sendResume = ({ id, formData }) => {
   return axiosWithCredentials.post(
-    `http://localhost:8081/api/jobs/apply/${id}`,
+    `https://stg.hunarli.com/api/jobs/apply/${id}`,
     formData,
     {
       headers: { "Content-Type": "multipart/form-data" },

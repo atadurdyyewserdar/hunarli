@@ -9,7 +9,7 @@ export const login = createAsyncThunk(
   ) {
     try {
       const response = await axios.post(
-        `http://localhost:8081/api/login`,
+        `https://stg.hunarli.com/api/login`,
         {
           username: username,
           password: password,
@@ -32,7 +32,7 @@ export const register = createAsyncThunk(
     { rejectWithValue }
   ) {
     try {
-      const response = await axios.post(`http://localhost:8081/api/signup`, {
+      const response = await axios.post(`https://stg.hunarli.com/api/signup`, {
         firstName: firstName,
         lastName: lastName,
         username: username,
@@ -53,7 +53,7 @@ export const logout = createAsyncThunk(
   async function (_, { dispatch }) {
     const instance = axios.create({ withCredentials: true });
     await instance
-      .post("http://localhost:8081/api/logout", { withCredentials: true })
+      .post("https://stg.hunarli.com/api/logout", { withCredentials: true })
       .catch((err) => {
       });
     dispatch(signOut());
