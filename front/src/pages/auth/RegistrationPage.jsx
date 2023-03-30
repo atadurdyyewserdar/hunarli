@@ -52,7 +52,7 @@ const RegistrationPage = () => {
   return (
     <div className="w-full flex justify-center mt-7 pr-6">
       <div className="w-full flex flex-col flex-wrap max-w-sm items-center">
-        <h1 className="font-bold text-[40px] mb-6">VACANCY</h1>
+        <h1 className="font-bold text-[40px] mb-6 font-logo italic text-[#001e44]">Hunarli</h1>
         {error && <NotificationBar error={error} />}
         <div className="bg-[#001131e0] flex items-center  rounded-sm m-3 box-border h-12 border border-[#001131e0] w-full">
           <InformationCircleIcon className="text-white h-6 pr-3 pl-3" />

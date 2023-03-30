@@ -15,7 +15,7 @@ const JobPost = ({ job }) => {
   const date = format(new Date(job?.postedDate || null), "MMM d, yyyy 'y.'");
   const time = format(new Date(job?.postedDate || null), "HH:mm");
   return (
-    <li className="bg-slate-50 h-full sm:w-full m-3 mt-0 sm:min-h-[130px] border-[#979797] border rounded-sm shadow">
+    <li className="bg-slate-50 h-full sm:w-full m-2 mt-0 sm:min-h-[130px] border-[#979797] border rounded-sm shadow">
       <div className="flex h-1/2 p-3">
         {job.author?.profilePictureMeta ? (
           <img

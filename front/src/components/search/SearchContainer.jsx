@@ -37,9 +37,9 @@ const SearchContainer = (props) => {
         <select
           value={location}
           onChange={(e) => setLocation(e.target.value)}
-          className="rounded-sm pl-5 h-full w-full focus:outline-none"
+          className="rounded-sm !bg-white pl-5 h-full w-full focus:outline-none"
         >
-          <option value="all">All</option>
+          <option className="bg-white" value="all">All</option>
           <option value="Ashgabat">Ashgabat</option>
           <option value="Mary">Mary</option>
           <option value="Anew">Anew</option>

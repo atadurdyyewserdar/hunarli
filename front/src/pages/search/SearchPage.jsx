@@ -162,14 +162,14 @@ const SearchPage = () => {
             isLoading={jobPostsQuery.isLoading}
           />
           {/* <PopularSearch /> */}
-          <div className="w-full mt-11 mb-11">
+          <div className="w-full sm:mt-11 mb-11">
             <div className="w-full flex sm:flex-row flex-col md:gap-5">
-              <div className="m-3 sm:hidden">
+              <div className="m-2 sm:hidden">
                 <button
-                  onClick={() => setFOpen(true)}
-                  className="w-full text-white text-lg p-3 font-semibold rounded-md bg-[#001131e0]"
+                  onClick={() => setFOpen(!fOpen)}
+                  className="w-full text-white text-md p-3 rounded-sm bg-[#001131e0]"
                 >
-                  Filters ☘️
+                  {fOpen ? 'Close filters' : 'Filters' }
                 </button>
               </div>
               <NormalViewFilters
@@ -180,8 +180,10 @@ const SearchPage = () => {
                 onChangeRadio={onChangeRadio}
                 onChangeCheckBox={onChangeCheckBox}
                 searchParams={searchParams}
+                fOpen={fOpen}
+                setFOpen={setFOpen}
               />
-              {fOpen && (
+              {/* {fOpen && (
                 <MobileViewFilters
                   categoryFilters={categoryFilters}
                   dateFilters={dateFilters}
@@ -192,7 +194,7 @@ const SearchPage = () => {
                   searchParams={searchParams}
                   setFOpen={setFOpen}
                 />
-              )}
+              )} */}
               <div className="w-full">
                 {jobPostsQuery.isLoading
                   ? null

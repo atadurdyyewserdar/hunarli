@@ -21,29 +21,17 @@ const Header = () => {
 
   return (
     <>
-      <header className="flex mx-auto w-full justify-center max-w-screen-xl ">
+      <header className="flex mx-auto w-full justify-center max-w-screen-xl">
         <div className="w-full flex justify-between items-center bg-[#ffff] p-3">
           <h1 className="font-extrabold text-[30px]">
             <Link className="logo" to="/">Hunarli.com</Link>
           </h1>
-          {open ? (
-            <XMarkIcon
-              className="md:hidden h-5 z-[99] cursor-pointer"
-              onClick={() => setOpen(!open)}
-            />
-          ) : null}
-          {!open ? (
-            <Bars3Icon
-              className="md:hidden h-7 z-[99] cursor-pointer"
-              onClick={() => setOpen(!open)}
-            />
-          ) : null}
           <LargeScreenNavbar
             isAuth={isAuth}
             logout={logoutUser}
             imgUrl={profilePictureUrl}
           />
-          {open && <SmallScreenNavbar isAuth={isAuth} logout={logoutUser} />}
+          <SmallScreenNavbar isAuth={isAuth} logout={logoutUser}/>
         </div>
       </header>
     </>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import CheckBox from "../home/CheckBox";
 import RadioButtonBox from "../home/RadioButtonBox";
 
@@ -9,9 +10,14 @@ const NormalViewFilters = ({
   onChangeRadio,
   onChangeCheckBox,
   searchParams,
+  fOpen,
 }) => {
   return (
-    <div className="hidden sm:block max-w-[330px] w-full sm:sticky top-5 h-fit">
+    <div
+      className={`${!fOpen && 'hidden'} ${
+        fOpen && "flex flex-col justify-center"
+      } md:block md:max-w-[330px] w-full md:sticky top-5 h-fit`}
+    >
       {/* <div className="rounded-md md:p-0 p-3 w-full h-fit bg-[#001131e0]">
         <div className="mb-1">
           <div className="flex items-center gap-3 p-3 pb-2 rounded-md">
@@ -39,7 +45,7 @@ const NormalViewFilters = ({
           </div>
         </div>
       </div> */}
-      <div className=" md:p-0 p-3 w-full h-fit text-white">
+      <div className="md:p-0 p-3 w-full h-fit text-white">
         <div className="mb-3  rounded-sm">
           <div className="p-3 bg-[#001131e0] pb-2 border-b">
             <h1 className="font-semibold text-[17px]">Categories</h1>

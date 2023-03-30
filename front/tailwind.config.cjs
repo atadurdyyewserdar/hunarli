@@ -6,6 +6,9 @@ module.exports = {
     container: {
       center: true,
     },
+    fontFamily: {
+      'logo': ['Righteous', 'cursive']
+    }
   },
   plugins: [],
 };
