@@ -2,7 +2,6 @@ import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import SearchContainer from "../../components/search/SearchContainer";
 import NormalViewFilters from "../../components/search/NormalViewFilters";
-import MobileViewFilters from "../../components/search/MobileViewFilters";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { multlipleSearchParams, removeSearchParam } from "../../utils/utils";
@@ -169,7 +168,7 @@ const SearchPage = () => {
                   onClick={() => setFOpen(!fOpen)}
                   className="w-full text-white text-md p-3 rounded-sm bg-[#001131e0]"
                 >
-                  {fOpen ? 'Close filters' : 'Filters' }
+                  {fOpen ? 'Filtrleri gizle' : 'Filtrler' }
                 </button>
               </div>
               <NormalViewFilters
@@ -183,18 +182,6 @@ const SearchPage = () => {
                 fOpen={fOpen}
                 setFOpen={setFOpen}
               />
-              {/* {fOpen && (
-                <MobileViewFilters
-                  categoryFilters={categoryFilters}
-                  dateFilters={dateFilters}
-                  sortFilter={sortFilter}
-                  initialSearchParams={initialSearchParams}
-                  onChangeRadio={onChangeRadio}
-                  onChangeCheckBox={onChangeCheckBox}
-                  searchParams={searchParams}
-                  setFOpen={setFOpen}
-                />
-              )} */}
               <div className="w-full">
                 {jobPostsQuery.isLoading
                   ? null
