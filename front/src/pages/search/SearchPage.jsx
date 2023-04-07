@@ -13,38 +13,38 @@ import JobPost from "../../components/search/JobPost";
 const dateFilters = [
   {
     id: 1,
-    title: "All",
+    title: "Ählisi",
     value: "all",
   },
   {
     id: 2,
-    title: "Last 24 hours 🔥",
+    title: "Soňky 24 sagat 🔥",
     value: "last24",
   },
 
   {
     id: 3,
-    title: "Last 3 days",
+    title: "Soňky 3 gün",
     value: "last3days",
   },
   {
     id: 4,
-    title: "Last week",
+    title: "Soňky hepde",
     value: "lastweek",
   },
   {
     id: 5,
-    title: "Last 2 weeks",
+    title: "Soňky 2 hepde",
     value: "last2weeks",
   },
   {
     id: 6,
-    title: "Last 3 weeks",
+    title: "Soňky 3 hepde",
     value: "last3weeks",
   },
   {
     id: 7,
-    title: "Last month",
+    title: "Soňky aý",
     value: "lastmonth",
   },
 ];

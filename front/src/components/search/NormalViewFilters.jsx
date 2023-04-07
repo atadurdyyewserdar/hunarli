@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import CheckBox from "../home/CheckBox";
 import RadioButtonBox from "../home/RadioButtonBox";
 
@@ -48,7 +47,7 @@ const NormalViewFilters = ({
       <div className="md:p-0 p-3 w-full h-fit text-white">
         <div className="mb-3  rounded-sm">
           <div className="p-3 bg-[#001131e0] pb-2 border-b">
-            <h1 className="font-semibold text-[17px]">Categories</h1>
+            <h1 className="font-semibold text-[17px]">Kategoriýalar</h1>
           </div>
           <div className="pb-3">
             <ul className="p-3 pt-1 pb-2 rounded-b-sm">
@@ -68,7 +67,7 @@ const NormalViewFilters = ({
         </div>
         <div className=" rounded-sm">
           <div className="p-3 pb-2 pt-2 border-b bg-[#001131e0]">
-            <h1 className="font-semibold text-[17px] ">Date posted</h1>
+            <h1 className="font-semibold text-[17px] ">Goýulan senesi</h1>
           </div>
           <div className="pb-3 pt-3  rounded-b-sm">
             <div>

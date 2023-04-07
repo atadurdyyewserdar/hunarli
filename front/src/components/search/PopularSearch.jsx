@@ -5,7 +5,7 @@ const PopularSearch = () => {
   return (
     <div className="sm:mx-auto sm:my-auto sm:mt-7 m-2 mt-7 ">
       <div className="flex items-center gap-2 mb-3">
-        <h1 className="text-[20px]">Popular searchs</h1>
+        <h1 className="text-[20px]">Köp gözledilenler</h1>
         <StarIcon className="h-6"/>
       </div>
       <ul className="flex pt-3 gap-5 flex-wrap">

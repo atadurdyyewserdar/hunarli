@@ -27,7 +27,7 @@ const SearchContainer = (props) => {
         <input
           type="text"
           className="rounded-sm pl-5 h-full w-full focus:outline-none"
-          placeholder="Hunar ady..."
+          placeholder="Hünär ady..."
           value={title}
           onChange={(e) => onChangeHandler(e, setTitle)}
         />
@@ -39,14 +39,14 @@ const SearchContainer = (props) => {
           onChange={(e) => setLocation(e.target.value)}
           className="rounded-sm !bg-white pl-5 h-full w-full focus:outline-none"
         >
-          <option className="bg-white" value="all">All</option>
-          <option value="Ashgabat">Ashgabat</option>
+          <option className="bg-white" value="all">Ählisi</option>
+          <option value="Ashgabat">Aşgabat</option>
           <option value="Mary">Mary</option>
-          <option value="Anew">Anew</option>
-          <option value="Turkmenbashy">Turkmenbashy</option>
-          <option value="Dashoguz">Dashoguz</option>
+          <option value="Anew">Änew</option>
+          <option value="Turkmenbashy">Turkmenbaşy</option>
+          <option value="Dashoguz">Daşoguz</option>
           <option value="Nebitdag">Nebitdag</option>
-          <option value="Turkmenabat">Turkmenabat</option>
+          <option value="Turkmenabat">Türkmenabat</option>
         </select>
       </div>
       <button
@@ -56,7 +56,7 @@ const SearchContainer = (props) => {
         {isLoading ? (
           <ArrowPathIcon className="h-5 w-5 text-white animate-spin" />
         ) : (
-          <h1>Search</h1>
+          <h1>Gözlet</h1>
         )}
       </button>
     </div>

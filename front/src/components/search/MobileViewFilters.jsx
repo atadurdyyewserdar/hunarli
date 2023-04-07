@@ -50,7 +50,7 @@ const MobileViewFilters = ({
               src={getImageUrl("../assets/icons/category.png")}
               alt=""
             />
-            <h1 className="text-white">Categories</h1>
+            <h1 className="text-white">Kategoriýalar</h1>
           </div>
           <div>
             <ul className="p-3 pt-0 pb-0 ml-8 rounded-b-md ">
@@ -75,7 +75,7 @@ const MobileViewFilters = ({
               src={getImageUrl("../assets/icons/calendar.png")}
               alt=""
             />
-            <h1 className="text-white">Date posted</h1>
+            <h1 className="text-white">Goýulan senesi</h1>
           </div>
           <div>
             <div>
@@ -99,7 +99,7 @@ const MobileViewFilters = ({
           onClick={() => setFOpen(false)}
           className="bg-white p-4 w-full font-semibold text-xl rounded-md text-[#001131] border-2 border-[#001131]"
         >
-          Close
+          Ýap
         </button>
       </div>
     </div>
