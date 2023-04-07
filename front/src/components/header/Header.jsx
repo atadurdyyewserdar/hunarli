@@ -24,7 +24,7 @@ const Header = () => {
       <header className="flex mx-auto w-full justify-center max-w-screen-xl">
         <div className="w-full flex justify-between items-center bg-[#ffff] p-3">
           <h1 className="font-extrabold text-[30px]">
-            <Link className="logo" to="/">Hunarli.com</Link>
+            <Link className="logo" to="/">Hünärli.com</Link>
           </h1>
           <LargeScreenNavbar
             isAuth={isAuth}

@@ -39,7 +39,7 @@ const SmallScreenNavbar = ({ isAuth, logout }) => {
                         "block px-4 py-2 text-md"
                       )}
                     >
-                      Ishler
+                      Işler
                     </Link>
                   )}
                 </Menu.Item>
@@ -52,7 +52,7 @@ const SmallScreenNavbar = ({ isAuth, logout }) => {
                         "block px-4 py-2 text-md"
                       )}
                     >
-                      My profile
+                      Hasabym
                     </Link>
                   )}
                 </Menu.Item>
@@ -66,7 +66,7 @@ const SmallScreenNavbar = ({ isAuth, logout }) => {
                       )}
                       onClick={logout}
                     >
-                      Logout
+                      Hasapdan çyk
                     </Link>
                   )}
                 </Menu.Item>
@@ -83,7 +83,7 @@ const SmallScreenNavbar = ({ isAuth, logout }) => {
                         "block px-4 py-2 text-md"
                       )}
                     >
-                      Ishler
+                      Işler
                     </Link>
                   )}
                 </Menu.Item>
@@ -97,7 +97,7 @@ const SmallScreenNavbar = ({ isAuth, logout }) => {
                       )}
                       onClick={logout}
                     >
-                      Login
+                      Gir
                     </Link>
                   )}
                 </Menu.Item>
@@ -111,7 +111,7 @@ const SmallScreenNavbar = ({ isAuth, logout }) => {
                       )}
                       onClick={logout}
                     >
-                      Sign up
+                      Hasap aç
                     </Link>
                   )}
                 </Menu.Item>

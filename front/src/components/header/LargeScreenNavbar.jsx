@@ -20,7 +20,7 @@ const LargeScreenNavbar = ({ isAuth, logout, imgUrl }) => {
           to="/search"
           className="font-semibold no-underline text-[#6b6b6b] hover:text-[#001131e0]"
         >
-          Ishler
+          Işler
         </Link>
       </li>
       {!isAuth && (
@@ -29,7 +29,7 @@ const LargeScreenNavbar = ({ isAuth, logout, imgUrl }) => {
             to="/login"
             className="font-semibold no-underline text-[#6b6b6b] hover:text-[#001131e0]"
           >
-            Login
+            Gir
           </Link>
         </li>
       )}
@@ -39,7 +39,7 @@ const LargeScreenNavbar = ({ isAuth, logout, imgUrl }) => {
             to="/signup"
             className="font-semibold no-underline hover:bg-[#001131] px-5 py-2 bg-[#001131e0] text-white rounded-sm"
           >
-            Sign Up
+            Hasap aç
           </Link>
         </li>
       )}
@@ -90,7 +90,7 @@ const LargeScreenNavbar = ({ isAuth, logout, imgUrl }) => {
                           "block px-4 py-2 text-sm"
                         )}
                       >
-                        My profile
+                        Şahsy sahypam
                       </Link>
                     )}
                   </Menu.Item>
@@ -106,7 +106,7 @@ const LargeScreenNavbar = ({ isAuth, logout, imgUrl }) => {
                         )}
                         onClick={logout}
                       >
-                        Logout
+                        Çyk
                       </Link>
                     )}
                   </Menu.Item>

@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import { BriefcaseIcon, ArrowPathIcon, MapPinIcon } from "@heroicons/react/24/outline";
+import {
+  BriefcaseIcon,
+  ArrowPathIcon,
+  MapPinIcon,
+} from "@heroicons/react/24/outline";
 
 const HomeSearchContainer = () => {
   const [title, setTitle] = useState("");
@@ -28,12 +32,11 @@ const HomeSearchContainer = () => {
     <>
       <div className="max-w-lg">
         <h1 className="text-[30px] font-bold md:ml-0 mt-5">
-          Lorem ipsum dolor sit amet consectetur
+          Iş orunlarynyň gözlegi
         </h1>
         <p className="mb-3">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-          repellat aut reprehenderit incidunt ullam ipsam iusto blanditiis
-          architecto.
+          “Hunarli” bilen Siz öziňize laýyk gelýän iş ornunlaryny, öňde barýan
+          kärhanalary we tejribleli işçileri tapyp bilersiňiz
         </p>
       </div>
       <div className="flex flex-wrap max-w-3xl">
@@ -42,7 +45,7 @@ const HomeSearchContainer = () => {
           <input
             type="text"
             className="rounded-l-lg pl-5 h-full w-full focus:outline-none"
-            placeholder="Hunar ady..."
+            placeholder="Hünär ady..."
             value={title}
             onChange={onChangeHandler}
           />
@@ -53,15 +56,16 @@ const HomeSearchContainer = () => {
             value={location}
             onChange={(e) => setLocation(e.target.value)}
             className="rounded-l-lg text-[16px] pl-5 h-full w-full focus:outline-none"
+            name="location"
           >
-            <option value="all">All</option>
-            <option value="Ashgabat">Ashgabat</option>
+            <option value="all">Ählisi</option>
+            <option value="Ashgabat">Aşgabat</option>
             <option value="Mary">Mary</option>
-            <option value="Anew">Anew</option>
-            <option value="Turkmenbashy">Turkmenbashy</option>
-            <option value="Dashoguz">Dashoguz</option>
+            <option value="Anew">Änew</option>
+            <option value="Turkmenbashy">Turkmenbaşy</option>
+            <option value="Dashoguz">Daşoguz</option>
             <option value="Nebitdag">Nebitdag</option>
-            <option value="Turkmenabat">Turkmenabat</option>
+            <option value="Turkmenabat">Türkmenabat</option>
           </select>
         </div>
         <button
@@ -71,7 +75,7 @@ const HomeSearchContainer = () => {
           {rotate ? (
             <ArrowPathIcon className="h-6 w-6 font-bold text-white animate-spin" />
           ) : (
-            <>Search</>
+            <>Gözlet</>
           )}
         </button>
       </div>
